@@ -89,7 +89,7 @@ section:not(#home) {
     opacity: 0;
 }
 
-/* NEW: Lightbox styles */
+/* Lightbox styles */
 .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -120,4 +120,13 @@ section:not(#home) {
 
 .lightbox-overlay.visible #lightbox-image {
     transform: scale(1);
+}
+
+/* NEW: Image frame for About section */
+.image-frame {
+    border: 3px solid #d4af37; /* brand-gold */
+    padding: 0.75rem; /* 12px */
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
 }
