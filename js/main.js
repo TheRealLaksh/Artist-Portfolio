@@ -79,50 +79,61 @@ document.addEventListener('DOMContentLoaded', () => {
         loadPage('pages/home.html');
     };
 
-    // --- Event Delegation for Dynamic Content ---
-    appContainer.addEventListener('click', (e) => {
-    // Handle home page anchor links
-    const anchor = e.target.closest('a[href^="#"]');
-    if (anchor && currentPageUrl === 'pages/home.html') {
-        e.preventDefault();
-        const targetId = anchor.getAttribute('href');
+    // NEW: Function to go to home and then scroll
+    window.goHomeAndScroll = async (targetId) => {
+        // Only load home if we aren't already there
+        if (currentPageUrl !== 'pages/home.html') {
+            await loadPage('pages/home.html');
+        }
+        
+        // Now that the homepage is loaded, find the target element and scroll
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
         }
-    }
+    };
 
-    // Handle gallery image clicks
-    const galleryImage = e.target.closest('#gallery-grid img');
-    if (galleryImage) {
-        openLightbox(galleryImage.src);
-    }
-
-    // UPDATED: Handle Copy to Clipboard with Tooltip
-    const copyButton = e.target.closest('.copy-btn');
-    if (copyButton) {
-        const textToCopy = copyButton.dataset.copy;
-        // Find the tooltip which is the next element sibling
-        const tooltip = copyButton.nextElementSibling; 
-
-        // Use a temporary textarea to perform the copy
-        const textArea = document.createElement("textarea");
-        textArea.value = textToCopy;
-        textArea.style.position = "fixed"; // prevent scrolling to bottom
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-
-        // Provide user feedback via tooltip
-        if (tooltip) {
-            tooltip.classList.add('visible');
-            setTimeout(() => {
-                tooltip.classList.remove('visible');
-            }, 1500); // Hide tooltip after 1.5 seconds
+    // --- Event Delegation for Dynamic Content ---
+    appContainer.addEventListener('click', (e) => {
+        // This now specifically handles ONLY the nav clicks on the home page itself
+        const anchor = e.target.closest('nav a[href^="#"]');
+        if (anchor && currentPageUrl === 'pages/home.html') {
+            e.preventDefault();
+            const targetId = anchor.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
         }
-    }
-});
+
+        const galleryImage = e.target.closest('#gallery-grid img');
+        if (galleryImage) {
+            openLightbox(galleryImage.src);
+        }
+
+        const copyButton = e.target.closest('.copy-btn');
+        if (copyButton) {
+            const textToCopy = copyButton.dataset.copy;
+            const tooltip = copyButton.nextElementSibling; 
+
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            if (tooltip) {
+                tooltip.classList.add('visible');
+                setTimeout(() => {
+                    tooltip.classList.remove('visible');
+                }, 1500);
+            }
+        }
+    });
 
     // --- Lightbox Functions ---
     function openLightbox(src) {
@@ -149,7 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.add('-translate-y-full');
             }
         } else {
-            navbar.classList.add('-translate-y-full');
+            // Make the navbar visible but not sticky on other pages
+            navbar.classList.add('-translate-y-full'); // This keeps it hidden unless logic changes
         }
     }
     window.addEventListener('scroll', handleNavVisibility);

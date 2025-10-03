@@ -1,19 +1,37 @@
-<div class="page-content min-h-screen p-4 md:p-8">
-    <div class="container mx-auto max-w-7xl text-center">
-        <h1 class="text-5xl font-serif text-brand-gold my-8">Gallery</h1>
-        <!-- Added id="gallery-grid" for event delegation -->
-        <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <img src="../assets/images/gallery1.jpg" alt="Gallery photo 1" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full">
-            <img src="../assets/images/gallery2.jpg" alt="Gallery photo 2" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full">
-            <img src="../assets/images/gallery3.jpg" alt="Gallery photo 3" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full">
-            <img src="../assets/images/gallery4.jpg" alt="Gallery photo 4" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full">
-            <img src="../assets/images/gallery5.jpg" alt="Gallery photo 5" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full">
-            <img src="../assets/images/gallery6.jpg" alt="Gallery photo 6" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full">
-            <img src="../assets/images/gallery7.jpg" alt="Gallery photo 7" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full">
-            <img src="../assets/images/gallery8.jpg" alt="Gallery photo 8" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full">
+<div class="page-content min-h-screen">
+    <nav class="sticky top-0 w-full z-50 glass-overlay">
+        <div class="container mx-auto max-w-7xl px-6 flex justify-between items-center h-20">
+            <a href="#" onclick="showHomePage(event)" class="text-2xl font-serif font-bold text-brand-gold">Shriya Shruti Misra</a> 
+            <div class="hidden md:flex items-center space-x-8 text-lg">
+                <a href="#" onclick="goHomeAndScroll('#about')" class="hover:text-brand-gold transition-colors">About</a>
+                <a href="#" onclick="goHomeAndScroll('#portfolio')" class="hover:text-brand-gold transition-colors">Portfolio</a>
+                <a href="#" onclick="goHomeAndScroll('#skills')" class="hover:text-brand-gold transition-colors">Skills</a>
+                <a href="#" onclick="goHomeAndScroll('#contact')" class="hover:text-brand-gold transition-colors">Contact</a>
+            </div>
         </div>
-        <div class="mt-12">
-            <a href="#" onclick="showHomePage(event)" class="px-8 py-4 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">Return to Home</a>
+    </nav>
+
+    <!-- Main Gallery Content -->
+    <div class="p-4 md:p-8">
+        <div class="container mx-auto max-w-7xl text-center">
+            <h1 class="text-5xl font-serif text-brand-gold my-8">Gallery</h1>
+            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img src="../assets/images/gallery1.jpg" alt="Gallery photo 1" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery2.jpg" alt="Gallery photo 2" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery3.jpg" alt="Gallery photo 3" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery4.jpg" alt="Gallery photo 4" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery5.jpg" alt="Gallery photo 5" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery6.jpg" alt="Gallery photo 6" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery7.jpg" alt="Gallery photo 7" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery8.jpg" alt="Gallery photo 8" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery9.jpg" alt="Gallery photo 9" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery10.jpg" alt="Gallery photo 10" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery11.jpg" alt="Gallery photo 11" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+                <img src="../assets/images/gallery12.jpg" alt="Gallery photo 12" class="cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 object-cover w-full h-full aspect-square">
+            </div>
+            <div class="mt-12">
+                <a href="#" onclick="showHomePage(event)" class="px-8 py-4 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">Return to Home</a>
+            </div>
         </div>
     </div>
 </div>
