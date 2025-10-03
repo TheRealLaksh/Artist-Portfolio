@@ -130,3 +130,50 @@ section:not(#home) {
     border-radius: 0.5rem; /* 8px */
     box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
 }
+
+/* NEW: Icon Button Styles for Footer */
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* 3.75rem */
+    height: 60px; /* 3.75rem */
+    border: 2px solid #d4af37; /* brand-gold */
+    border-radius: 9999px; /* full */
+    color: #d4af37; /* brand-gold */
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+.icon-btn:hover {
+    background-color: #d4af37; /* brand-gold */
+    color: #100000; /* brand-dark */
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+.icon-btn svg {
+    width: 28px; /* 1.75rem */
+    height: 28px; /* 1.75rem */
+}
+
+/* NEW: Tooltip for Copy Feedback */
+.copy-tooltip {
+    position: absolute;
+    bottom: 125%; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d4af37; /* brand-gold */
+    color: #100000; /* brand-dark */
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+.copy-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}

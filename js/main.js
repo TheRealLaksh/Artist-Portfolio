@@ -20,37 +20,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const appContainer = document.getElementById('app-container');
     const lightboxOverlay = document.getElementById('lightbox-overlay');
     const lightboxImage = document.getElementById('lightbox-image');
-    const navbar = document.getElementById('navbar'); // Get reference to the persistent navbar
+    const navbar = document.getElementById('navbar');
 
-    let currentPageUrl = ''; // Track the current page URL
+    let currentPageUrl = '';
 
     // Function to load and display a new page
     async function loadPage(pageUrl) {
         if (currentPageUrl === pageUrl) return;
 
-        // Start the exit animation for the current content
         if (appContainer.firstElementChild) {
             appContainer.firstElementChild.classList.add('is-exiting');
         }
-
-        // Wait for the exit animation to complete
         await new Promise(resolve => setTimeout(resolve, 500));
 
         try {
-            // Fetch the new page content
             const response = await fetch(pageUrl);
             if (!response.ok) throw new Error(`Could not load page: ${pageUrl}`);
             const html = await response.text();
             
-            // Replace the content
             appContainer.innerHTML = html;
             currentPageUrl = pageUrl;
             window.scrollTo(0, 0); 
             
-            // Handle navbar visibility after page load
             handleNavVisibility();
-
-            // Re-attach scroll animations for the new content
             initializeScrollAnimations();
 
         } catch (error) {
@@ -89,23 +81,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Delegation for Dynamic Content ---
     appContainer.addEventListener('click', (e) => {
-        // Handle home page anchor links
-        const anchor = e.target.closest('a[href^="#"]');
-        if (anchor && currentPageUrl === 'pages/home.html') {
-            e.preventDefault();
-            const targetId = anchor.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
+    // Handle home page anchor links
+    const anchor = e.target.closest('a[href^="#"]');
+    if (anchor && currentPageUrl === 'pages/home.html') {
+        e.preventDefault();
+        const targetId = anchor.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
+    }
 
-        // Handle gallery image clicks
-        const galleryImage = e.target.closest('#gallery-grid img');
-        if (galleryImage) {
-            openLightbox(galleryImage.src);
+    // Handle gallery image clicks
+    const galleryImage = e.target.closest('#gallery-grid img');
+    if (galleryImage) {
+        openLightbox(galleryImage.src);
+    }
+
+    // UPDATED: Handle Copy to Clipboard with Tooltip
+    const copyButton = e.target.closest('.copy-btn');
+    if (copyButton) {
+        const textToCopy = copyButton.dataset.copy;
+        // Find the tooltip which is the next element sibling
+        const tooltip = copyButton.nextElementSibling; 
+
+        // Use a temporary textarea to perform the copy
+        const textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        textArea.style.position = "fixed"; // prevent scrolling to bottom
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        // Provide user feedback via tooltip
+        if (tooltip) {
+            tooltip.classList.add('visible');
+            setTimeout(() => {
+                tooltip.classList.remove('visible');
+            }, 1500); // Hide tooltip after 1.5 seconds
         }
-    });
+    }
+});
 
     // --- Lightbox Functions ---
     function openLightbox(src) {
@@ -126,14 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Navbar Visibility Control ---
     function handleNavVisibility() {
         if (currentPageUrl === 'pages/home.html') {
-            // Show nav on scroll down on home page
             if (window.scrollY > window.innerHeight * 0.8) {
                 navbar.classList.remove('-translate-y-full');
             } else {
                 navbar.classList.add('-translate-y-full');
             }
         } else {
-            // Always hide nav on other pages
             navbar.classList.add('-translate-y-full');
         }
     }
