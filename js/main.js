@@ -16,11 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Global Page Navigation Logic ---
+    // --- Global Page Navigation & Lightbox Logic ---
     const appContainer = document.getElementById('app-container');
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const navbar = document.getElementById('navbar'); // Get reference to the persistent navbar
+
+    let currentPageUrl = ''; // Track the current page URL
 
     // Function to load and display a new page
     async function loadPage(pageUrl) {
+        if (currentPageUrl === pageUrl) return;
+
         // Start the exit animation for the current content
         if (appContainer.firstElementChild) {
             appContainer.firstElementChild.classList.add('is-exiting');
@@ -32,16 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Fetch the new page content
             const response = await fetch(pageUrl);
-            if (!response.ok) {
-                throw new Error(`Could not load page: ${pageUrl}`);
-            }
+            if (!response.ok) throw new Error(`Could not load page: ${pageUrl}`);
             const html = await response.text();
             
             // Replace the content
             appContainer.innerHTML = html;
-            window.scrollTo(0, 0); // Scroll to top of new page
+            currentPageUrl = pageUrl;
+            window.scrollTo(0, 0); 
+            
+            // Handle navbar visibility after page load
+            handleNavVisibility();
 
-            // Re-attach all necessary event listeners and animations for the new content
+            // Re-attach scroll animations for the new content
             initializeScrollAnimations();
 
         } catch (error) {
@@ -68,38 +77,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Global Navigation Functions ---
-    // These are attached to the window object so they can be called from the inline onclick attributes in your HTML files.
-    window.showRolePage = (roleId) => {
-        loadPage(`pages/${roleId}.html`);
-    };
-
+    window.showRolePage = (roleId) => loadPage(`pages/${roleId}.html`);
     window.showGalleryPage = (event) => {
         if (event) event.preventDefault();
         loadPage('pages/gallery.html');
     };
-    
     window.showHomePage = (event) => {
         if (event) event.preventDefault();
         loadPage('pages/home.html');
     };
 
-    // --- SMOOTH SCROLL FOR HOME PAGE ANCHOR LINKS ---
-    // Using event delegation on the app container
+    // --- Event Delegation for Dynamic Content ---
     appContainer.addEventListener('click', (e) => {
-        // Check if the clicked element is a nav link on the home page
-        const anchor = e.target.closest('nav a[href^="#"]');
-        if (anchor && appContainer.querySelector('#home-page-content')) {
+        // Handle home page anchor links
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor && currentPageUrl === 'pages/home.html') {
             e.preventDefault();
             const targetId = anchor.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         }
+
+        // Handle gallery image clicks
+        const galleryImage = e.target.closest('#gallery-grid img');
+        if (galleryImage) {
+            openLightbox(galleryImage.src);
+        }
     });
+
+    // --- Lightbox Functions ---
+    function openLightbox(src) {
+        lightboxImage.src = src;
+        lightboxOverlay.classList.remove('hidden');
+        setTimeout(() => lightboxOverlay.classList.add('visible'), 20);
+    }
+
+    function closeLightbox() {
+        lightboxOverlay.classList.remove('visible');
+        setTimeout(() => {
+            lightboxOverlay.classList.add('hidden');
+            lightboxImage.src = "";
+        }, 300);
+    }
+    lightboxOverlay.addEventListener('click', closeLightbox);
+    
+    // --- Navbar Visibility Control ---
+    function handleNavVisibility() {
+        if (currentPageUrl === 'pages/home.html') {
+            // Show nav on scroll down on home page
+            if (window.scrollY > window.innerHeight * 0.8) {
+                navbar.classList.remove('-translate-y-full');
+            } else {
+                navbar.classList.add('-translate-y-full');
+            }
+        } else {
+            // Always hide nav on other pages
+            navbar.classList.add('-translate-y-full');
+        }
+    }
+    window.addEventListener('scroll', handleNavVisibility);
     
     // --- Initial Page Load ---
     loadPage('pages/home.html');

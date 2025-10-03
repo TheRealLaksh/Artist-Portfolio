@@ -38,12 +38,31 @@
 </head>
 <body class="font-sans bg-brand-dark text-brand-cream">
 
+    <!-- Sticky Navbar - MOVED HERE TO BE PERSISTENT -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-transform duration-500 -translate-y-full glass-overlay">
+        <div class="container mx-auto max-w-7xl px-6 flex justify-between items-center h-20">
+            <a href="#" onclick="showHomePage(event)" class="text-2xl font-serif font-bold text-brand-gold">Shriya Shruti Misra</a>
+            <div class="hidden md:flex items-center space-x-8 text-lg">
+                <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
+                <a href="#portfolio" class="hover:text-brand-gold transition-colors">Portfolio</a>
+                <a href="#" onclick="showGalleryPage(event)" class="hover:text-brand-gold transition-colors">Gallery</a>
+                <a href="#skills" class="hover:text-brand-gold transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Gradient Canvas Container -->
     <canvas id="gradient-canvas" class="fixed top-0 left-0 w-full h-full z-[-1]"></canvas>
 
     <!-- App Container where pages are loaded -->
     <div id="app-container" class="relative">
         <!-- Content will be loaded dynamically by main.js -->
+    </div>
+
+    <!-- Lightbox Overlay for Fullscreen Images -->
+    <div id="lightbox-overlay" class="lightbox-overlay hidden">
+        <img id="lightbox-image" src="" alt="Fullscreen gallery image">
     </div>
 
     <!-- Link to JS Libraries and your custom script -->
