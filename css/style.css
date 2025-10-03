@@ -63,7 +63,7 @@ body {
     border-color: rgba(212, 175, 55, 0.4);
 }
 
-/* Interactive 3D Tilt Effect on Portfolio Cards */
+/* Portfolio Card Effect */
 .portfolio-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-style: preserve-3d;
@@ -74,13 +74,17 @@ body {
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
 }
 
-/* Section transition effect */
+/* Section border */
 section:not(#home) {
     border-top: 1px solid rgba(212, 175, 55, 0.15);
     position: relative;
 }
 
 /* Page transition styles */
-.page.hidden {
-    display: none;
+.page-content {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.page-content.is-exiting {
+    opacity: 0;
 }

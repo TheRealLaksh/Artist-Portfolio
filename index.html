@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shriya Shruti Misra | Actor & Storyteller</title>
     
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
+    <!-- Link to your Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -34,227 +38,16 @@
 </head>
 <body class="font-sans bg-brand-dark text-brand-cream">
 
+    <!-- Gradient Canvas Container -->
     <canvas id="gradient-canvas" class="fixed top-0 left-0 w-full h-full z-[-1]"></canvas>
 
-    <div id="home-page" class="page transition-opacity duration-500 ease-in-out">
-        <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-transform duration-500 -translate-y-full glass-overlay">
-            <div class="container mx-auto max-w-7xl px-6 flex justify-between items-center h-20">
-                <a href="#home" class="text-2xl font-serif font-bold text-brand-gold">Shriya Shruti Misra</a>
-                <div class="hidden md:flex items-center space-x-8 text-lg">
-                    <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
-                    <a href="#portfolio" class="hover:text-brand-gold transition-colors">Portfolio</a>
-                    <a href="#skills" class="hover:text-brand-gold transition-colors">Skills</a>
-                    <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
-                </div>
-            </div>
-        </nav>
-
-        <header id="home" class="h-screen w-full flex flex-col justify-center items-center relative text-center bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(16, 0, 0, 0.8), rgba(16, 0, 0, 0.8)), url('https://placehold.co/1920x1080/100000/FFF8E1?text=Shriya+Shruti+Misra');">
-            <div class="animate-on-scroll fade-in-up visible">
-                <h1 class="text-6xl md:text-8xl font-serif font-bold text-white tracking-wider">Shriya Shruti Misra</h1>
-                <p class="mt-4 text-xl md:text-2xl text-brand-gold font-semibold tracking-widest">Stage Artist  • Storyteller • Singer</p>
-                <a href="#portfolio" class="mt-8 inline-block px-8 py-3 bg-brand-gold text-brand-dark font-bold rounded-lg text-lg uppercase tracking-wider hover:bg-brand-cream hover:scale-105 transition-transform duration-300">
-                    View My Work
-                </a>
-            </div>
-            <div class="absolute bottom-10 animate-bounce">
-                <svg class="w-8 h-8 text-brand-gold" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </div>
-        </header>
-
-        <main class="w-full">
-
-            <!-- About Section: Meet the Artist -->
-    <section id="about" class="py-20 md:py-32 bg-brand-maroon/50 overflow-hidden">
-        <div class="container mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
-            <div class="md:col-span-2 animate-on-scroll slide-in-left">
-                <img src="https://placehold.co/600x800/2C0000/FFF8E1?text=Portrait" alt="A candid portrait of Shriya Shruti Misra" class="rounded-lg shadow-2xl w-full h-auto object-cover">
-            </div>
-            <div class="md:col-span-3">
-                <h2 class="text-4xl md:text-5xl font-serif text-brand-gold mb-6 title-underline animate-on-scroll fade-in-up">Meet the Artist</h2>
-                <div class="space-y-4 text-lg font-light leading-relaxed text-brand-cream">
-                    <p class="animate-on-scroll fade-in-up" data-delay="200">My dedication to acting and storytelling is the driving force behind my pursuits. Theatre, for me, transcends mere performance; it is a profound means of human connection. My experience spans a diverse array of roles, from the spirited Queen of Hearts to the composed and profound Gandhari. Each character has challenged me to evolve, explore various facets of the human condition, and continually refine my theatrical abilities.</p>
-                    <p class="animate-on-scroll fade-in-up" data-delay="300">Beyond performance, my ambition lies in leveraging the art of storytelling as a catalyst for positive change. Theatre possesses a unique power to broaden perspectives and foster new understandings, and I believe it can be an influential instrument for raising awareness about sustainability. This conviction fuels my aspiration to study abroad, where I can immerse myself in different cultures and integrate new viewpoints into my craft. My goal is not simply to perform, but to fully engage with theatre, using it to create significant impact and bring narratives of hope, resilience, and responsibility to a global audience.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-            <section id="portfolio" class="py-20 md:py-32">
-                <div class="container mx-auto max-w-7xl px-6 text-center">
-                    <h2 class="text-4xl md:text-5xl font-serif text-brand-gold mb-16 title-underline animate-on-scroll fade-in-up">Featured Roles</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                        <article onclick="showRolePage('role-1')" class="portfolio-card group relative h-96 rounded-lg shadow-xl overflow-hidden animate-on-scroll scale-up cursor-pointer" style="background-image: url('https://placehold.co/600/400/4d0000/d4af37?text=Nora+Helmer');">
-                            <div class="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-colors duration-300 flex flex-col justify-end p-6 text-left">
-                                <h3 class="text-3xl font-serif font-semibold text-white">IRIDISCENT AND DHARMO RAKSHATI RAKSHITAH</h3>
-                                <p class="text-lg text-brand-gold mb-4 italic">The red hearts queen, Gandhari</p>
-                                <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-brand-cream">Click to view performance details</p>
-                            </div>
-                        </article>
-                        <article onclick="showRolePage('role-2')" class="portfolio-card group relative h-96 rounded-lg shadow-xl overflow-hidden animate-on-scroll scale-up cursor-pointer" data-delay="200" style="background-image: url('https://placehold.co/600/400/4d0000/d4af37?text=Lady+Macbeth');">
-                             <div class="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-colors duration-300 flex flex-col justify-end p-6 text-left">
-                                <h3 class="text-3xl font-serif font-semibold text-white">Lady Macbeth</h3>
-                                <p class="text-lg text-brand-gold mb-4 italic">Macbeth</p>
-                                <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-brand-cream">Click to view performance details</p>
-                            </div>
-                        </article>
-                        <article onclick="showRolePage('role-3')" class="portfolio-card group relative h-96 rounded-lg shadow-xl overflow-hidden animate-on-scroll scale-up cursor-pointer" data-delay="400" style="background-image: url('https://placehold.co/600/400/4d0000/d4af37?text=Anjali');">
-                            <div class="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-colors duration-300 flex flex-col justify-end p-6 text-left">
-                                <h3 class="text-3xl font-serif font-semibold text-white">Anjali</h3>
-                                <p class="text-lg text-brand-gold mb-4 italic">Original Monologue</p>
-                                <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-brand-cream">Click to view performance details</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <section id="testimonial" class="py-20 md:py-32 bg-brand-maroon/50">
-                 <div class="container mx-auto max-w-4xl px-6 text-center animate-on-scroll fade-in-up">
-                    <p class="text-2xl md:text-3xl font-serif italic leading-relaxed text-brand-cream">"Shriya possesses a rare combination of raw talent and intellectual rigor. Her dedication to character analysis is remarkable, making her not just an actor, but a true artist. She is a director's dream."</p>
-                    <p class="mt-8 text-xl font-semibold text-brand-gold tracking-wider">- R. K. Verma</p>
-                    <p class="text-md text-brand-cream/70">Theatre Director</p>
-                </div>
-            </section>
-
-            <section id="skills" class="py-20 md:py-32">
-                <div class="container mx-auto max-w-6xl px-6 text-center">
-                    <h2 class="text-4xl md:text-5xl font-serif text-brand-gold mb-16 title-underline animate-on-scroll fade-in-up">The Credits: Skills & Training</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-                        <div class="glass-overlay p-6 rounded-lg animate-on-scroll fade-in-up" data-delay="100">
-                            <h3 class="text-xl font-serif font-bold text-brand-gold mb-3">Performance</h3>
-                            <ul class="list-disc list-inside space-y-2 font-light">
-                                <li>Monologues & Soliloquy</li><li>Improvisation</li><li>Stage Combat</li><li>Voice & Diction</li>
-                            </ul>
-                        </div>
-                        <div class="glass-overlay p-6 rounded-lg animate-on-scroll fade-in-up" data-delay="200">
-                            <h3 class="text-xl font-serif font-bold text-brand-gold mb-3">Dance</h3>
-                            <ul class="list-disc list-inside space-y-2 font-light">
-                                <li>Kathak (Intermediate)</li><li>Bollywood</li><li>Contemporary</li><li>Yoga</li>
-                            </ul>
-                        </div>
-                        <div class="glass-overlay p-6 rounded-lg animate-on-scroll fade-in-up" data-delay="300">
-                            <h3 class="text-xl font-serif font-bold text-brand-gold mb-3">Languages</h3>
-                            <ul class="list-disc list-inside space-y-2 font-light">
-                                <li>English (Fluent, RP)</li><li>Hindi (Native)</li><li>French (Conversational)</li><li>American Accent</li>
-                            </ul>
-                        </div>
-                        <div class="glass-overlay p-6 rounded-lg animate-on-scroll fade-in-up" data-delay="400">
-                            <h3 class="text-xl font-serif font-bold text-brand-gold mb-3">Training</h3>
-                            <ul class="list-disc list-inside space-y-2 font-light">
-                                <li>IB Theatre HL (2 Years)</li><li>Acting Workshop</li><li>Local Theatre Group</li><li>Voice Coaching</li>
-                            </ul>
-                        </div>
-                    </div>
-                     <a href="#" class="mt-12 inline-block px-8 py-3 border-2 border-brand-gold text-brand-gold font-bold rounded-lg text-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300 animate-on-scroll fade-in-up" data-delay="500">Download Resume (PDF)</a>
-                </div>
-            </section>
-        </main>
-        
-        <footer id="contact" class="py-16 text-center">
-            <div class="container mx-auto max-w-4xl px-6 animate-on-scroll fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-serif text-brand-gold mb-4">Get In Touch</h2>
-                <p class="text-lg text-brand-cream mb-8">Available for collaborations and new opportunities.</p>
-                <a href="mailto:shriya.s.misra.actor@email.com" class="text-xl text-brand-gold hover:underline">shriya.s.misra.actor@email.com</a>
-                <div class="flex justify-center space-x-6 mt-8">
-                    <a href="#" class="text-brand-cream hover:text-brand-gold transition-colors"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.014c0 4.438 2.865 8.225 6.839 9.537.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.014C22 6.477 17.523 2 12 2z" clip-rule="evenodd" /></svg></a>
-                    <a href="#" class="text-brand-cream hover:text-brand-gold transition-colors"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm3.68 9.85l-4.11 1.95c-.34.16-.73-.08-.73-.47V7.67c0-.38.39-.63.73-.47l4.11 1.95c.34.16.34.78 0 .94z"/></svg></a>
-                </div>
-                <p class="mt-10 text-sm text-gray-500">&copy; 2025 Shriya Shruti Misra. All Rights Reserved.</p>
-            </div>
-        </footer>
-    </div>
-    
-    <div id="role-1" class="page hidden opacity-0 transition-opacity duration-500 ease-in-out fixed inset-0 bg-brand-dark overflow-y-auto">
-        <div class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
-            <div class="w-full max-w-5xl bg-black shadow-2xl rounded-lg overflow-hidden">
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe id="video-1" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen class="w-full h-full"></iframe>
-                </div>
-            </div>
-            <div class="w-full max-w-5xl mt-8 text-center">
-                <h2 class="text-4xl font-serif text-brand-gold">Nora Helmer</h2>
-                <p class="text-lg text-brand-cream mt-2 mb-4 italic">A Doll's House</p>
-                <p class="max-w-3xl mx-auto text-brand-cream/80 leading-relaxed">
-                    <strong>Actor's Notes:</strong> Portraying Nora's transformation from a sheltered 'doll' to an independent woman was a profound journey. The final scene, where she confronts her husband, required a delicate balance of vulnerability and newfound strength. This role taught me the importance of internal monologue in driving a performance, especially in moments of silence.
-                </p>
-                <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
-                    <a href="#" onclick="showHomePage(event)" class="px-6 py-3 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">Return to Home</a>
-                    <a href="#" onclick="showGalleryPage(event)" class="px-6 py-3 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">View Gallery</a>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand-gold text-brand-dark font-bold rounded-lg uppercase tracking-wider hover:bg-brand-cream transition-colors duration-300">View Full Show</a>
-                </div>
-            </div>
-        </div>
+    <!-- App Container where pages are loaded -->
+    <div id="app-container" class="relative">
+        <!-- Content will be loaded dynamically by main.js -->
     </div>
 
-    <div id="role-2" class="page hidden opacity-0 transition-opacity duration-500 ease-in-out fixed inset-0 bg-brand-dark overflow-y-auto">
-         <div class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
-            <div class="w-full max-w-5xl bg-black shadow-2xl rounded-lg overflow-hidden">
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe id="video-2" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen class="w-full h-full"></iframe>
-                </div>
-            </div>
-            <div class="w-full max-w-5xl mt-8 text-center">
-                <h2 class="text-4xl font-serif text-brand-gold">Lady Macbeth</h2>
-                <p class="text-lg text-brand-cream mt-2 mb-4 italic">Macbeth</p>
-                <p class="max-w-3xl mx-auto text-brand-cream/80 leading-relaxed">
-                   <strong>Actor's Notes:</strong> Embodying Lady Macbeth required delving into the darker aspects of ambition and guilt. The challenge was to portray her formidable strength without losing the underlying humanity and vulnerability that leads to her descent into madness. Mastering the Shakespearean language to convey authentic emotion was a key focus of my preparation.
-                </p>
-                <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
-                    <a href="#" onclick="showHomePage(event)" class="px-6 py-3 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">Return to Home</a>
-                    <a href="#" onclick="showGalleryPage(event)" class="px-6 py-3 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">View Gallery</a>
-                    <a href="https://www.youtube.com/watch?v=videoseries?list=PL4fGSI1pDJn6j_i3nKN14sQeS2n_v4-1t" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand-gold text-brand-dark font-bold rounded-lg uppercase tracking-wider hover:bg-brand-cream transition-colors duration-300">View Full Show</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="role-3" class="page hidden opacity-0 transition-opacity duration-500 ease-in-out fixed inset-0 bg-brand-dark overflow-y-auto">
-         <div class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
-            <div class="w-full max-w-5xl bg-black shadow-2xl rounded-lg overflow-hidden">
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe id="video-3" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen class="w-full h-full"></iframe>
-                </div>
-            </div>
-            <div class="w-full max-w-5xl mt-8 text-center">
-                <h2 class="text-4xl font-serif text-brand-gold">Anjali</h2>
-                <p class="text-lg text-brand-cream mt-2 mb-4 italic">Original Monologue: "Crossroads"</p>
-                <p class="max-w-3xl mx-auto text-brand-cream/80 leading-relaxed">
-                   <strong>Actor's Notes:</strong> Developing a character for an original piece was an exciting exercise in creativity and collaboration. My goal with Anjali was to explore themes of identity and belonging, grounding her motivations in universal human experiences. The process involved extensive improvisation to build her backstory and make her choices feel authentic and immediate.
-                </p>
-                <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
-                    <a href="#" onclick="showHomePage(event)" class="px-6 py-3 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">Return to Home</a>
-                    <a href="#" onclick="showGalleryPage(event)" class="px-6 py-3 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">View Gallery</a>
-                    <a href="https://www.youtube.com/watch?v=rokGy0huYEA" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand-gold text-brand-dark font-bold rounded-lg uppercase tracking-wider hover:bg-brand-cream transition-colors duration-300">View Full Show</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div id="gallery-page" class="page hidden opacity-0 transition-opacity duration-500 ease-in-out fixed inset-0 bg-brand-dark overflow-y-auto p-4 md:p-8">
-        <div class="container mx-auto max-w-7xl text-center">
-            <h1 class="text-5xl font-serif text-brand-gold my-8">Gallery</h1>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <img src="https://placehold.co/600x800/2C0000/FFF8E1?text=Photo+1" alt="Gallery photo 1" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/600x600/2C0000/FFF8E1?text=Photo+2" alt="Gallery photo 2" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/600x800/2C0000/FFF8E1?text=Photo+3" alt="Gallery photo 3" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/600x600/2C0000/FFF8E1?text=Photo+4" alt="Gallery photo 4" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/600x600/2C0000/FFF8E1?text=Photo+5" alt="Gallery photo 5" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/600x800/2C0000/FFF8E1?text=Photo+6" alt="Gallery photo 6" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/600x600/2C0000/FFF8E1?text=Photo+7" alt="Gallery photo 7" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img src="https://placehold.co/600x800/2C0000/FFF8E1?text=Photo+8" alt="Gallery photo 8" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-            </div>
-            <div class="mt-12">
-                <a href="#" onclick="showHomePage(event)" class="px-8 py-4 border-2 border-brand-gold text-brand-gold font-bold rounded-lg uppercase tracking-wider hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">Return to Home</a>
-            </div>
-        </div>
-    </div>
-
-
+    <!-- Link to JS Libraries and your custom script -->
     <script src="js/granim.min.js"></script>
-    
     <script src="js/main.js"></script>
 
 </body>

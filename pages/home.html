@@ -1,0 +1,75 @@
+<div class="page-content">
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-transform duration-500 -translate-y-full glass-overlay">
+        <div class="container mx-auto max-w-7xl px-6 flex justify-between items-center h-20">
+            <a href="#" onclick="showHomePage(event)" class="text-2xl font-serif font-bold text-brand-gold">Shriya Shruti Misra</a>
+            <div class="hidden md:flex items-center space-x-8 text-lg">
+                <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
+                <a href="#portfolio" class="hover:text-brand-gold transition-colors">Portfolio</a>
+                <a href="#skills" class="hover:text-brand-gold transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header & Marquee Section -->
+    <header id="home" class="h-screen w-full flex flex-col justify-center items-center relative text-center bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(16, 0, 0, 0.8), rgba(16, 0, 0, 0.8)), url('https://placehold.co/1920x1080/100000/FFF8E1?text=Shriya+Shruti+Misra');">
+        <div class="animate-on-scroll fade-in-up visible">
+            <h1 class="text-6xl md:text-8xl font-serif font-bold text-white tracking-wider">Shriya Shruti Misra</h1>
+            <p class="mt-4 text-xl md:text-2xl text-brand-gold font-semibold tracking-widest">Stage Artist • Storyteller • Singer</p>
+            <a href="#portfolio" class="mt-8 inline-block px-8 py-3 bg-brand-gold text-brand-dark font-bold rounded-lg text-lg uppercase tracking-wider hover:bg-brand-cream hover:scale-105 transition-transform duration-300">
+                View My Work
+            </a>
+        </div>
+        <div class="absolute bottom-10 animate-bounce">
+            <svg class="w-8 h-8 text-brand-gold" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full">
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32 bg-brand-maroon/50 overflow-hidden">
+            <div class="container mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-2 animate-on-scroll slide-in-left">
+                    <img src="https://placehold.co/600x800/2C0000/FFF8E1?text=Portrait" alt="A candid portrait of Shriya Shruti Misra" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+                </div>
+                <div class="md:col-span-3">
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-gold mb-6 title-underline animate-on-scroll fade-in-up">Meet the Artist</h2>
+                    <div class="space-y-4 text-lg font-light leading-relaxed text-brand-cream">
+                        <p class="animate-on-scroll fade-in-up" data-delay="200">My dedication to acting and storytelling is the driving force behind my pursuits. Theatre, for me, transcends mere performance; it is a profound means of human connection...</p>
+                        <p class="animate-on-scroll fade-in-up" data-delay="300">Beyond performance, my ambition lies in leveraging the art of storytelling as a catalyst for positive change...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20 md:py-32">
+            <div class="container mx-auto max-w-7xl px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-gold mb-16 title-underline animate-on-scroll fade-in-up">Featured Roles</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <article onclick="showRolePage('role-1')" class="portfolio-card group ...">
+                        ...
+                    </article>
+                    <article onclick="showRolePage('role-2')" class="portfolio-card group ...">
+                        ...
+                    </article>
+                    <article onclick="showRolePage('role-3')" class="portfolio-card group ...">
+                        ...
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ... Other sections (Testimonial, Skills) ... -->
+
+    </main>
+    
+    <!-- Footer -->
+    <footer id="contact" class="py-16 text-center">
+        ...
+    </footer>
+</div>
