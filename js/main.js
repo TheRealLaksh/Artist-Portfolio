@@ -1,22 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Gradient Background Initialization ---
-    var granimInstance = new Granim({
-        element: '#gradient-canvas',
-        direction: 'diagonal',
-        isPausedWhenNotInView: true,
-        states : {
-            "default-state": {
-                gradients: [
-                    ['#100000', '#4d0000'],
-                    ['#400000', '#100000']
-                ],
-                transitionSpeed: 5000
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#d4af37"
+            },
+            "shape": {
+                "type": "circle"
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false
+            },
+            "size": {
+                "value": 3,
+                "random": true
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#d4af37",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false
             }
-        }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "repulse": {
+                    "distance": 100,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                }
+            }
+        },
+        "retina_detect": true
     });
 
-    // --- Global Page Navigation & Lightbox Logic ---
     const appContainer = document.getElementById('app-container');
     const lightboxOverlay = document.getElementById('lightbox-overlay');
     const lightboxImage = document.getElementById('lightbox-image');
@@ -24,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentPageUrl = '';
 
-    // Function to load and display a new page
     async function loadPage(pageUrl) {
         if (currentPageUrl === pageUrl) return;
 
@@ -51,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initialize Scroll Animations for new content
     function initializeScrollAnimations() {
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
         const observer = new IntersectionObserver((entries) => {
@@ -68,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         animatedElements.forEach(el => observer.observe(el));
     }
 
-    // --- Global Navigation Functions ---
     window.showRolePage = (roleId) => loadPage(`pages/${roleId}.html`);
     window.showGalleryPage = (event) => {
         if (event) event.preventDefault();
@@ -79,14 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loadPage('pages/home.html');
     };
 
-    // NEW: Function to go to home and then scroll
     window.goHomeAndScroll = async (targetId) => {
-        // Only load home if we aren't already there
         if (currentPageUrl !== 'pages/home.html') {
             await loadPage('pages/home.html');
         }
         
-        // Now that the homepage is loaded, find the target element and scroll
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             targetElement.scrollIntoView({
@@ -95,9 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- Event Delegation for Dynamic Content ---
     appContainer.addEventListener('click', (e) => {
-        // This now specifically handles ONLY the nav clicks on the home page itself
         const anchor = e.target.closest('nav a[href^="#"]');
         if (anchor && currentPageUrl === 'pages/home.html') {
             e.preventDefault();
@@ -135,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Lightbox Functions ---
     function openLightbox(src) {
         lightboxImage.src = src;
         lightboxOverlay.classList.remove('hidden');
@@ -151,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     lightboxOverlay.addEventListener('click', closeLightbox);
     
-    // --- Navbar Visibility Control ---
     function handleNavVisibility() {
         if (currentPageUrl === 'pages/home.html') {
             if (window.scrollY > window.innerHeight * 0.8) {
@@ -160,12 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.add('-translate-y-full');
             }
         } else {
-            // Make the navbar visible but not sticky on other pages
-            navbar.classList.add('-translate-y-full'); // This keeps it hidden unless logic changes
+            navbar.classList.add('-translate-y-full');
         }
     }
     window.addEventListener('scroll', handleNavVisibility);
     
-    // --- Initial Page Load ---
     loadPage('pages/home.html');
 });

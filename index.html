@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shriya Shruti Misra | Actor & Storyteller</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Link to your Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
 
-    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -40,7 +36,8 @@
 </head>
 <body class="font-sans bg-brand-dark text-brand-cream">
 
-    <!-- Sticky Navbar - MOVED HERE TO BE PERSISTENT -->
+    <div id="particles-js"></div>
+
     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-transform duration-500 -translate-y-full glass-overlay">
         <div class="container mx-auto max-w-7xl px-6 flex justify-between items-center h-20">
             <a href="#" onclick="showHomePage(event)" class="text-2xl font-serif font-bold text-brand-gold">Shriya Shruti Misra</a>
@@ -54,20 +51,14 @@
         </div>
     </nav>
 
-    <!-- Gradient Canvas Container -->
-    <canvas id="gradient-canvas" class="fixed top-0 left-0 w-full h-full z-[-1]"></canvas>
-
-    <!-- App Container where pages are loaded -->
     <div id="app-container" class="relative">
-        <!-- Content will be loaded dynamically by main.js -->
     </div>
 
-    <!-- Lightbox Overlay for Fullscreen Images -->
     <div id="lightbox-overlay" class="lightbox-overlay hidden">
         <img id="lightbox-image" src="" alt="Fullscreen gallery image">
     </div>
 
-    <!-- Link to JS Libraries and your custom script -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/granim.min.js"></script>
     <script src="js/main.js"></script>
 
