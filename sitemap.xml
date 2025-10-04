@@ -3,7 +3,7 @@
   
   <!-- Main Home Page: Highest priority -->
   <url>
-    <loc>https://shruti-misra.netlify.app/</loc>
+    <loc>artist-portfolio.lakshp.live/</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- Gallery Page -->
   <url>
-    <loc>https://shruti-misra.netlify.app/#gallery</loc>
+    <loc>artist-portfolio.lakshp.live/#gallery</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,25 +19,25 @@
   
   <!-- Individual Role Pages -->
   <url>
-    <loc>https://shruti-misra.netlify.app/#role-1</loc>
+    <loc>artist-portfolio.lakshp.live/#role-1</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shruti-misra.netlify.app/#role-2</loc>
+    <loc>artist-portfolio.lakshp.live/#role-2</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shruti-misra.netlify.app/#role-3</loc>
+    <loc>artist-portfolio.lakshp.live/#role-3</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shruti-misra.netlify.app/#role-4</loc>
+    <loc>artist-portfolio.lakshp.live/#role-4</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
