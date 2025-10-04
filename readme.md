@@ -23,4 +23,4 @@ A fully responsive, single-page application (SPA) designed to showcase a creativ
 To run this project locally, simply clone the repository and open the `index.html` file in your web browser.
 
 ```sh
-git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
+git clone [git clone https://github.com/TheRealLaksh/Shruti-Misra.git]
