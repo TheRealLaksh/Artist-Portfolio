@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  This sitemap lists all the crawlable pages on the website for search engines.
+  It helps them understand the structure of the site and index it more effectively.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- Main Home Page: Highest priority -->
   <url>
-    <loc>artist-portfolio.lakshp.live/</loc>
+    <loc>https://artist-portfolio.lakshp.live/</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +15,7 @@
   
   <!-- Gallery Page -->
   <url>
-    <loc>artist-portfolio.lakshp.live/#gallery</loc>
+    <loc>https://artist-portfolio.lakshp.live/#gallery</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,28 +23,29 @@
   
   <!-- Individual Role Pages -->
   <url>
-    <loc>artist-portfolio.lakshp.live/#role-1</loc>
+    <loc>https://artist-portfolio.lakshp.live/#role-1</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>artist-portfolio.lakshp.live/#role-2</loc>
+    <loc>https://artist-portfolio.lakshp.live/#role-2</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>artist-portfolio.lakshp.live/#role-3</loc>
+    <loc>https://artist-portfolio.lakshp.live/#role-3</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>artist-portfolio.lakshp.live/#role-4</loc>
+    <loc>https://artist-portfolio.lakshp.live/#role-4</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
 </urlset>
+
