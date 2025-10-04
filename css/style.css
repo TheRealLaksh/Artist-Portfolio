@@ -1,43 +1,53 @@
+/* --- BASE & TYPOGRAPHY STYLES --- */
 body {
     background-color: #100000;
     color: #fff8e1;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+h1, h2, h3 {
+    /* Adds a subtle glow effect to headings, enhancing the theme */
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* --- INTERACTIVE BACKGROUND --- */
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -1; /* Places the background behind all other content */
 }
 
-h1, h2, h3 {
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-}
-
+/* --- CUSTOM SCROLLBAR --- */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #100000; }
 ::-webkit-scrollbar-thumb {
-    background-color: #d4af37;
+    background-color: #d4af37; /* brand-gold */
     border-radius: 10px;
     border: 2px solid #100000;
 }
 
+/* --- SCROLL ANIMATION CLASSES --- */
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+/* Pre-animation states for different effects */
 .animate-on-scroll.slide-in-left { transform: translateX(-50px); }
 .animate-on-scroll.slide-in-right { transform: translateX(50px); }
 .animate-on-scroll.fade-in-up { transform: translateY(50px); }
 .animate-on-scroll.scale-up { transform: scale(0.9); }
+/* The state when the element becomes visible */
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateX(0) translateY(0) scale(1);
 }
 
+/* --- UI COMPONENTS & EFFECTS --- */
+
+/* Animated underline for section titles */
 .title-underline {
     position: relative;
     display: inline-block;
@@ -50,15 +60,16 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #d4af37;
+    background-color: #d4af37; /* brand-gold */
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
 }
 .animate-on-scroll.visible .title-underline::after {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Reveals the underline on scroll */
 }
 
+/* Glassmorphism effect for navigation and other overlays */
 .glass-overlay {
     background: rgba(26, 0, 0, 0.6);
     backdrop-filter: blur(8px);
@@ -71,29 +82,32 @@ h1, h2, h3 {
     border-color: rgba(212, 175, 55, 0.4);
 }
 
+/* Portfolio card hover effect */
 .portfolio-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform-style: preserve-3d;
     background-size: cover;
     background-position: center;
 }
 .portfolio-card:hover {
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5); /* Adds a golden glow */
 }
 
+/* Simple border for separating sections */
 section:not(#home) {
     border-top: 1px solid rgba(212, 175, 55, 0.15);
     position: relative;
 }
 
+/* --- SPA PAGE TRANSITIONS --- */
 .page-content {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
 .page-content.is-exiting {
-    opacity: 0;
+    opacity: 0; /* Fades out the old content */
 }
 
+/* --- LIGHTBOX STYLES --- */
 .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -109,11 +123,9 @@ section:not(#home) {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
-
 .lightbox-overlay.visible {
     opacity: 1;
 }
-
 #lightbox-image {
     max-width: 90vw;
     max-height: 90vh;
@@ -121,11 +133,11 @@ section:not(#home) {
     transform: scale(0.8);
     transition: transform 0.3s ease-in-out;
 }
-
 .lightbox-overlay.visible #lightbox-image {
     transform: scale(1);
 }
 
+/* --- MISCELLANEOUS STYLES --- */
 .image-frame {
     border: 3px solid #d4af37;
     padding: 0.75rem;
@@ -157,6 +169,7 @@ section:not(#home) {
     height: 28px;
 }
 
+/* Tooltip for copy-to-clipboard feedback */
 .copy-tooltip {
     position: absolute;
     bottom: 125%;

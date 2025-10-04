@@ -1,26 +1,34 @@
-# Interactive Portfolio Website
+# The Digital Canvas: An Artist Portfolio Template
 
-A fully responsive, single-page application (SPA) designed to showcase a creative portfolio. This project is built with vanilla JavaScript and dynamically loads all content for a smooth, seamless user experience without page reloads.
+Every artist needs a stage. A quiet gallery. A space to share their work with the world. This project was born from that idea—to create a digital canvas that feels as alive and dynamic as the art it holds.
 
-## Features
+It’s a place for stories, for collections, for performances. A minimal, modern, and interactive home for your creative work.
 
-* **Single-Page Application:** All content is loaded into a single shell, providing a fast and fluid navigation experience.
-* **Dynamic Content Loading:** Pages like role details and the gallery are fetched and displayed asynchronously.
-* **Interactive Background:** Features a live, animated particle background that responds to cursor movements.
-* **Responsive Design:** The UI is built with a mobile-first approach and adapts gracefully to any screen size.
-* **Modern Tech Stack:** Built with HTML5, JavaScript, and styled with Tailwind CSS for a clean, modern aesthetic.
+---
 
-## Tech Stack
+### Core Philosophy
 
-* HTML5
-* CSS3 & Tailwind CSS
-* JavaScript (ES6+)
-* Particles.js
-* Granim.js
+* **A Fluid Experience:** Navigate through galleries and stories without interruption. The entire site is a single, continuous space, designed to keep the focus on the work.
+* **An Interactive Atmosphere:** The background subtly shifts and responds to you, creating an environment that feels present and alive.
+* **Your Art, On Any Screen:** From a phone to a desktop, your work is presented beautifully, just as you intended.
 
-## Getting Started
+### The Medium (Tech Stack)
 
-To run this project locally, simply clone the repository and open the `index.html` file in your web browser.
+* HTML5 & CSS3
+* **Tailwind CSS** for clean, utility-first styling.
+* **Vanilla JavaScript (ES6+)** for a fast, lightweight experience.
+* **Particles.js** for the living, interactive background.
 
-```sh
-git clone [git clone https://github.com/TheRealLaksh/Shruti-Misra.git]
+### Make It Your Own
+
+To use this template for your own portfolio:
+
+1.  **Clone the repository:**
+    ```sh
+    git clone [git clone https://github.com/TheRealLaksh/Shruti-Misra.git]
+    ```
+2.  **Navigate to the folder and open `index.html`** in your browser to see it live.
+3.  **Customize:**
+    * Replace the images in the `/assets/images/` folder with your own.
+    * Update the video files in `/assets/videos/`.
+    * Edit the text in the `.html` files in the `/pages/` directory to tell your own story.
